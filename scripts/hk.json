@@ -1,0 +1,6 @@
+{
+    "mode": "RGB",
+    "foreground": [128, 64, 64],
+    "background": [221, 255, 221],
+    "rotation": [-15, 15]
+}

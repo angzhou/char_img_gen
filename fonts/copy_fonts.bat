@@ -1,10 +1,10 @@
 rem for western
-cp %SystemRoot%\fonts\verdana.ttf .
-cp %SystemRoot%\fonts\tahoma.ttf .
+copy %SystemRoot%\fonts\verdana.ttf .
+copy %SystemRoot%\fonts\tahoma.ttf .
 rem for symbol
-cp %SystemRoot%\fonts\symbol.ttf .
+copy %SystemRoot%\fonts\symbol.ttf .
 rem for Chinese
-cp %SystemRoot%\fonts\msyh.ttc .
-cp %SystemRoot%\fonts\simsun.ttc .
-cp %SystemRoot%\fonts\simkai.ttf .
-cp %SystemRoot%\fonts\simfang.ttf .
+copy %SystemRoot%\fonts\msyh.ttc .
+copy %SystemRoot%\fonts\simsun.ttc .
+copy %SystemRoot%\fonts\simkai.ttf .
+copy %SystemRoot%\fonts\simfang.ttf .
