@@ -2,6 +2,8 @@
 
 All files have one character per line.
 
+All files are UTF-8 encoded.
+
 ## Filenames and details
 
 | file   | chars | category                                        | selection details  |

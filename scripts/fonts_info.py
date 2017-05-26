@@ -17,14 +17,21 @@ font_files = {"simkai.ttf": ("sc", "tc", "hk"),
               "msmincho.ttc": ("jc", "jp"),
               "YuGothR.ttc": ("jc", "jp"),
               "YuGothB.ttc": ("jc", "jp"),
+              "tahoma.ttf": ("ws", "mo"),
+              "cambria.ttc": ("ws", "mo"),
+              "seguisym.ttf": ("mo"),
+              "mingliu.ttc": ("ws", "mo"),
               }
 
 # some fonts need special treatment
 # for example, msyh.ttc shifted down, we need to adjust it up
 y_shift = {"msyh": -20,
+           "msjh": -19,
+           "msjhbd": -19,
            "meiryo": -17,
            "meiryob": -17,
            "malgun": -18,
            "malgunbd": -18,
            "malgunsl": -18,
+           "cambria.ttc": -10,
            }

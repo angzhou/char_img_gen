@@ -16,10 +16,7 @@ from PIL import Image, ImageDraw, ImageFont
 from fonts_info import font_files, y_shift
 
 # change these to suit your need
-SIZE = 96
 SAVE_DIR = "F:\\charimgs"
-# F: is 850 pro
-#SAVE_DIR = "F:\\ccocr\\imgdata\\fontpngs\\s%d" % SIZE
 
 if platform.system() is not "Windows":
     exit("Please run under Windows!")
@@ -43,19 +40,23 @@ if os.path.isfile("%s.json" % cat):
         config['foreground'] = tuple(config['foreground'])
     if isinstance(config['background'], list):
         config['background'] = tuple(config['background'])
-else:
-    config = { "mode": "L",
-               "foreground": 255,
-               "background": 0,
-               "rotation": 0
-               }
 
+else:
+    config = {"size": 96,
+              "mode": "L",
+              "foreground": 255,
+              "background": 0,
+              "rotation": 0
+              }
+
+SIZE = config['size']
 
 fonts = [f for f in font_files if cat in font_files[f]]
 
 FONTS_DIR = os.path.join("..", "fonts")
 
-label_file = codecs.open(os.path.join("..", "char_lists", "%s.txt" % cat), encoding="utf-8")
+label_file = codecs.open(os.path.join("..", "char_lists", "%s.txt" % cat),
+                         encoding="utf-8")
 labels = label_file.readlines()
 label_file.close()
 labels = [a.strip() for a in labels]
@@ -70,12 +71,15 @@ for f in fonts:
     for label in labels:
         im = Image.new(config['mode'], (SIZE, SIZE), config['background'])
         draw = ImageDraw.Draw(im)
-        dest_dir = os.path.join(save_dir, label)
+        code = ord(label)
+        if code < 128:
+            dest_dir = os.path.join(save_dir, str(code))
+        else:
+            dest_dir = os.path.join(save_dir, label)
+
         if not os.path.isdir(dest_dir):
             os.mkdir(dest_dir)
 
-        # some fonts need special treatment
-        # msyh.ttc shifted down, we need to adjust it up
         if f[:-4] in y_shift:
             y_start = y_shift[f[:-4]]
         else:
@@ -94,5 +98,5 @@ for f in fonts:
             im = Image.new(config['mode'], (SIZE, SIZE), config['background'])
             im.paste(im2, im2)
 
-        im.save(os.path.join(dest_dir, "font_%s.png" % f[:-4]), "PNG")
+        im.save(os.path.join(dest_dir, "%X_font_%s.png" % (code, f[:-4])), "PNG")
         del draw
