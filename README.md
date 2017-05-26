@@ -1,6 +1,6 @@
 # char-img-gen
 
-Experiment to generate images from font file.
+Experiment to generate images from font files.
 
 The images that are generated are used in CNN training.
 
