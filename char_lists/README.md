@@ -18,3 +18,14 @@ All files are UTF-8 encoded.
 | ws.txt | 359   | ascii, Windows-1252, Russian, Greek characters  | Most western languages are covered |
 | mo.txt | 205   | Math symbols (selected)                         | Most math formulas should be covered |
 
+These characters are removed from ws.txt:
+
+    ª ¯ ° ² ³ ¹ º ¼ ½ ¾ 
+    á è é ì í ò ó ù ú Α
+    Β Ε Ζ Η Ι Κ Μ Ν Ο Ρ
+    Τ Υ Χ μ ο А В Е К М
+    Н О Р С Т У Х Ь а в
+    г д е ж з и й к л м
+    н о п р с т у ф х ц
+    ч ш щ ъ ы ь э ю я ё
+
