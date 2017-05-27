@@ -67,12 +67,25 @@ if not os.path.isdir(save_dir):
 
 for f in fonts:
     font_path = os.path.join("..", "fonts", f)
-    font = ImageFont.truetype(font_path, SIZE)
+    # If we keep the font size the same as img size
+    # characters such as  Â, Î will be cut off at the top, 
+    #  and j, ç, ÿ, ą will be truncated at the bottom.
+    # So we reduce font size so that they all fit into image of size SIZE
+    if cat in ('ws', 'mo'):
+        font = ImageFont.truetype(font_path, int(SIZE * 0.82))
+    else:
+        font = ImageFont.truetype(font_path, SIZE)
+
     for label in labels:
         im = Image.new(config['mode'], (SIZE, SIZE), config['background'])
         draw = ImageDraw.Draw(im)
         code = ord(label)
-        if code < 128:
+        # if code < 0x17f:  # this is not enough
+        if cat == 'ws':
+            # in windows, we can not create different directories for 'a' and  'A', 
+            # or for 'å' and 'Å'
+            # So for all ascii and other latin chararacters, 
+            # we use decimal code as directory name
             dest_dir = os.path.join(save_dir, str(code))
         else:
             dest_dir = os.path.join(save_dir, label)
@@ -98,5 +111,5 @@ for f in fonts:
             im = Image.new(config['mode'], (SIZE, SIZE), config['background'])
             im.paste(im2, im2)
 
-        im.save(os.path.join(dest_dir, "%X_font_%s.png" % (code, f[:-4])), "PNG")
+        im.save(os.path.join(dest_dir, "%04X_font_%s.png" % (code, f[:-4])), "PNG")
         del draw

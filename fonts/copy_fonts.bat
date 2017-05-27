@@ -1,11 +1,10 @@
 rem these should be present on every win 10
-copy %SystemRoot%\fonts\cambria.ttc
-copy %SystemRoot%\fonts\consola.ttf
-copy %SystemRoot%\fonts\cour.ttf
-copy %SystemRoot%\fonts\segoeui.ttf
-copy %SystemRoot%\fonts\seguisym.ttf
-copy %SystemRoot%\fonts\tahoma.ttf
-copy %SystemRoot%\fonts\verdana.ttf
+copy %SystemRoot%\fonts\cambria.ttc .
+copy %SystemRoot%\fonts\consola.ttf .
+copy %SystemRoot%\fonts\cour.ttf .
+copy %SystemRoot%\fonts\segoeui.ttf .
+copy %SystemRoot%\fonts\seguisym.ttf .
+copy %SystemRoot%\fonts\tahoma.ttf .
 rem uncomment when you have installed more language packs
 rem copy %SystemRoot%\fonts\msyh.ttc .
 rem copy %SystemRoot%\fonts\simsun.ttc .
