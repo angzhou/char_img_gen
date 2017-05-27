@@ -13,8 +13,7 @@ These categories of characters are used:
 1. Japanese Kanji (selected)
 1. Japnese 平仮名-hiragana & 片仮名-katakana
 1. Korean syllables (selected)
-1. ascii - windows-1250
-1. Windows-1252, Russian, Greek characters
+1. ascii, Windows-1252, Russian, Greek characters
 1. Math symbols (selected)
 
 See [README.md in char_lists/](char_lists/README.md) for character selection rationales.

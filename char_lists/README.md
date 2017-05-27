@@ -15,7 +15,7 @@ All files are UTF-8 encoded.
 | jc.txt | 232   | Japanese Kanji (selected)                       | Most of Kanji characters are already in sc.txt and tc.txt, this only have those characters that only appear in Japanese |
 | jp.txt | 162   | Japnese 平仮名-hiragana & 片仮名-katakana       | I hope they are complete, if not, let me know |
 | kr.txt | 972   | Korean syllables (selected)                     | I got this by `sort`, `uniq` a flattened file called '6000 Most Common Korean Words', I heard from interweb that they should cover 99.9% usage |
-| ws.txt | 359   | ascii, Windows-1252, Russian, Greek characters  | Most western languages are covered |
+| ws.txt | 278   | ascii, Windows-1252, Russian, Greek characters  | Most western languages are covered |
 | mo.txt | 205   | Math symbols (selected)                         | Most math formulas should be covered |
 
 These characters are removed from ws.txt:
@@ -28,4 +28,8 @@ These characters are removed from ws.txt:
     г д е ж з и й к л м
     н о п р с т у ф х ц
     ч ш щ ъ ы ь э ю я ё
+    ´ ×
 
+These are removed from mo.txt:
+
+    ∆ ∕ ∖ □ △ ▽
